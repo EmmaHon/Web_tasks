@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Task B</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <h1>Form validation JavaScript</h1>
+
+    <form novalidate>
+        <!-- your input elements here -->
+        Firstname:<br>
+            <input type="text" name= "fname"><br><br>
+        Lastname:<br>
+            <input type="text" name= "lname"><br><br>
+        Email:<br>
+            <input type="email" name= "email" placeholder="Example@mail.com"><br><br>
+        Phone number:<br>
+            <input type="tel" name= "phone" pattern="[^\+358]\d{9}" placeholder="+358 501234567"><br><br>
+        Address:<br>
+            <input type="text" name= "address"><br><br>
+        Postal code:<br>
+            <input type="tel" name= "postal" pattern=" \d{5}"><br><br>
+        Password:<br>
+            <input type="password" value="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset"><br>
+            
+        </form>
+    
+    <script src="js/main.js"></script>
+</body>
+
+</html>
