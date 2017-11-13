@@ -24,6 +24,20 @@
     <main class="primary-color">
         <ul>
             <!-- HTML created with JS comes here -->
+            <button type="button" onclick="showImages()">Show Images</button>
+            <script> function showImages(){
+                const showImages = () => {
+                    const ul = document.querySelector('ul');
+                    fetch('images.html')
+                        .then((response) => {
+                            return response.text();
+                        })
+                        .then((text) => {
+                            ul.innerHTML = text;
+                        });
+                };
+                showImages();
+            }</script>
         </ul>
     </main>
     <aside class="default">

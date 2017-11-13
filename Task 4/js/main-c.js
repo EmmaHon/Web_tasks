@@ -25,10 +25,24 @@ const showImages = () => {
     fetch('images.json')
         .then((response) => {
             return response.json();
-        }).then((json) => {
-        let html = '';
-        json.forEach((image) => {
-            
+        })
+        .then((json) => {
+            json.forEach((image) => {
+
+      let listItem = document.createElement("li");
+                let listImage = document.createElement("IMG");
+                let figure = document.createElement("figure");
+                let figCaption = document.createElement("figcaption");
+                let figCaptionText = document.createElement("image.mediaTitle");
+                let linkToImg = document.createElement("a");
+                linkToImg.href =`img/original/$(image.mediaUrl)`;
+                listImage.src =`img/thumbs/$(image.mediaThumb)`;
+                linkToImg.appendChild(listImage);
+                figCaption.appendChild(figCaptionText);
+                figure.appendChild(linkToImg);
+                figure.appendChild(figCaption);
+                listImage.appendChild(figure);
+                ul.appendChild(listItem);
         });
     });
 };
