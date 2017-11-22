@@ -28,8 +28,37 @@ const showImages = () => {
         })
         .then((json) => {
             json.forEach((image) => {
+               //put code here
+                const h3 = document.createElement('h3');
+                const figcaption = document.createElement('figcaption');
+                const img = document.createElement('img');
+                const a = document.createElement('a');
+                const figure = document.createElement('figure');
+                const li = document.createElement('li');
 
-      let listItem = document.createElement("li");
+                //add text content
+                const text = document.createTextNode(image.mediaTitle);
+                h3.appendChild(text);
+                //or
+                //h3.innerHTML = image.mediaTitle;
+
+                //add attributes
+                img.setAttribute('src', 'img/thumbs/' + image.mediaUrl);
+                a.setAttribute('href', 'img/original/' + image.mediaUrl);
+                //a.addEventListener() if you want to add pop up window
+
+                //nest elements
+                figcaption.appendChild(h3);
+                a.appendChild(img);
+                figure.appendChild(a); //
+                figure.appendChild(figcaption);
+                li.appendChild(figure);
+
+                // insert new elements to page
+                ul.appendChild(li);
+
+
+      /*let listItem = document.createElement("li");
                 let listImage = document.createElement("IMG");
                 let figure = document.createElement("figure");
                 let figCaption = document.createElement("figcaption");
@@ -43,6 +72,7 @@ const showImages = () => {
                 figure.appendChild(figCaption);
                 listImage.appendChild(figure);
                 ul.appendChild(listItem);
+                */
         });
     });
 };
